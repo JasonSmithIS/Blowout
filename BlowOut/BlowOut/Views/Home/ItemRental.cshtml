@@ -11,19 +11,16 @@
         <h4 id="UsedPrice" class="hidden">Used - @ViewBag.usedprice</h4>
         @*<h4 id="Price" onload="NewPrice()">@ViewBag.newprice</h4>*@
         
-    <div class="radio">
-            <label>
-                <input type="radio" name="optionsRadios1" id="optionsRadios1" value="New" onclick="NewPrice();">
-                New
-            </label>
-           
+    @Html.BeginForm(){
+        <div>
+
+            @Html.RadioButton("optionsRadios1", "New", new { onclick = "NewPrice();" })
+            New
+
+            @Html.RadioButton("optionsRadios2", "Used", new { onclick = "UsedPrice();" })
+            Used
         </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optionsRadios2" id="optionsRadios2" value="Used" onclick="UsedPrice();">
-                Used
-            </label>
-        </div>
+        }
         @*@{
             
         NewPrice(){ViewBag.price = "$55 a month";};
