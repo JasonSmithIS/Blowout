@@ -11,15 +11,21 @@
         <h4 id="UsedPrice" class="hidden">Used - @ViewBag.usedprice</h4>
         @*<h4 id="Price" onload="NewPrice()">@ViewBag.newprice</h4>*@
         
-    @Html.BeginForm(){
-        <div>
-
-            @Html.RadioButton("optionsRadios1", "New", new { onclick = "NewPrice();" })
-            New
-
-            @Html.RadioButton("optionsRadios2", "Used", new { onclick = "UsedPrice();" })
-            Used
-        </div>
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.RadioButton("Price", "New", new { onclick = "NewPrice()" })New
+                @Html.RadioButton("Price", "Used", new { onclick = "UsedPrice()" })Used
+            </div>
+        }
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.RadioButton("gender", "Male",
+         new { id = "IsMale" }) Male
+                @Html.RadioButton("gender", "Female",
+         new { id = "IsFemale" }) Female
+            </div>
         }
         @*@{
             
