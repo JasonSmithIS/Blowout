@@ -1,0 +1,46 @@
+﻿<h2>Instrument Rentals</h2>
+<p>Please click on the photo of the instrument you would like to rent for more information.</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <a href='@Url.Action("Trumpet", "Instrument", new { name = "Trumpet" })' class="thumbnail">
+            <p>Trumpet</p>
+            <img src="~/Content/Images/trumpet.png" alt="Trummpet" style="width:150px;height:150px">
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href='@Url.Action("Trombone", "Instrument", new { name = "Trombone" })' class="thumbnail">
+            <p>Trombone</p>
+            <img src="~/Content/Images/Trombone.png" alt="Trombone" style="width:150px;height:150px">
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href='@Url.Action("Tuba", "Instrument", new { name = "Tuba" })' class="thumbnail">
+            <p>Tuba</p>
+            <img src="~/Content/Images/Tuba.png" alt="Tuba" style="width:150px;height:150px">
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a href='@Url.Action("Flute", "Instrument", new { name = "Flute" })' class="thumbnail">
+            <p>Flute</p>
+            <img src="~/Content/Images/Flute.png" alt="Flute" style="width:150px;height:150px">
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href='@Url.Action("Clarinet", "Instrument", new { name = "Clarinet" })' class="thumbnail">
+            <p>Clarinet</p>
+            <img src="~/Content/Images/Clarinet.png" alt="Clarinet" style="width:150px;height:150px">
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href='@Url.Action("Saxophone", "Instrument", new { name = "Saxophone" })' class="thumbnail">
+            <p>Saxophone</p>
+            <img src="~/Content/Images/Saxophone.png" alt="Saxophone" style="width:150px;height:150px">
+        </a>
+    </div>
+</div>
+
+@Html.DisplayText("Once the 18 months has been achieved, the client owns the instrument. If they return it at any time before 3 months there will be a $200 re-stocking fee. If they return it after 3 months they forfeit any equity in the instrument.")
+

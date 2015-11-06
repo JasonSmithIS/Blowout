@@ -1,0 +1,24 @@
+﻿<div class="row">
+    
+    <div class="col-md-8">
+        <a href='@Url.Action("Instrument", "Instrument", new { name = "Tuba" })' class="thumbnail">
+            <p>Tuba</p>
+            <img src="~/Content/Images/Tuba.png" alt="Tuba" style="width:150px;height:150px">
+        </a>
+    </div>
+    <div class="col-md-4">
+        <h3>Prices</h3>
+        <h4>New - $70</h4>
+        <h4>Used - $50</h4>
+    </div>
+</div>
+
+@Html.DisplayText("Once the 18 months has been achieved, the client owns the instrument. If they return it at any time before 3 months there will be a $200 re-stocking fee. If they return it after 3 months they forfeit any equity in the instrument.")
+@*ViewBag.Instrument = name;
+
+            if (name.Equals("Tuba"))
+	        {
+                ViewBag.price = "$70 a month";
+                ViewBag.price = "$50 a month";
+	        }*@
+            

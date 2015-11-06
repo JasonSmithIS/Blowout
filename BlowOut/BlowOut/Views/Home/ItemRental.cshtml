@@ -1,0 +1,59 @@
+﻿<div class="row">
+    <div class="col-md-8">
+        <a href='@Url.Action("ItemRental", "Home", new { name = @ViewBag.name })' class="thumbnail">
+            <p>@ViewBag.name</p>
+            <img src="@ViewBag.image" alt="@ViewBag.name" style="width:150px;height:150px">
+        </a>
+    </div>
+    <div class="col-md-4">
+        <h3>Prices</h3>
+        <h4 id="NewPrice" class="hidden">New - @ViewBag.newprice</h4>
+        <h4 id="UsedPrice" class="hidden">Used - @ViewBag.usedprice</h4>
+        @*<h4 id="Price" onload="NewPrice()">@ViewBag.newprice</h4>*@
+        
+    <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios1" id="optionsRadios1" value="New" onclick="NewPrice();">
+                New
+            </label>
+           
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios2" id="optionsRadios2" value="Used" onclick="UsedPrice();">
+                Used
+            </label>
+        </div>
+        @*@{
+            
+        NewPrice(){ViewBag.price = "$55 a month";};
+        UsedPrice(){ViewBag.price = "$25 a month";};
+        }*@
+
+    </div>
+    
+</div>
+@Html.DisplayText("Once the 18 months has been achieved, the client owns the instrument. If they return it at any time before 3 months there will be a $200 re-stocking fee. If they return it after 3 months they forfeit any equity in the instrument.")
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    function NewPrice() {
+
+        if (jQuery('#UsedPrice').hasClass('visible'))
+        {
+            $('#UsedPrice').addClass('hidden');
+            
+        }
+
+        jQuery('#NewPrice').removeClass('hidden').addClass('visible');
+    }
+
+    function UsedPrice() {
+
+        if (jQuery('#NewPrice').hasClass('visible')) {
+            $('#NewPrice').addClass('hidden');
+        }
+
+        jQuery('#UsedPrice').removeClass('hidden').addClass('visible');
+    }
+</script>            
