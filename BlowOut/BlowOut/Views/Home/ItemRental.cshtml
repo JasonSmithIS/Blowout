@@ -9,6 +9,7 @@
         <h3>Prices</h3>
         <h4 id="NewPrice" class="hidden">New - @ViewBag.newprice</h4>
         <h4 id="UsedPrice" class="hidden">Used - @ViewBag.usedprice</h4>
+        @*<h4 id="Price" onload="NewPrice()">@ViewBag.newprice</h4>*@
         
         @using (Html.BeginForm())
         {
@@ -17,11 +18,25 @@
                 @Html.RadioButton("Price", "Used", new { onclick = "UsedPrice()" })Used
             </div>
         }
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.RadioButton("gender", "Male",
+         new { id = "IsMale" }) Male
+                @Html.RadioButton("gender", "Female",
+         new { id = "IsFemale" }) Female
+            </div>
+        }
+        @*@{
+            
+        NewPrice(){ViewBag.price = "$55 a month";};
+        UsedPrice(){ViewBag.price = "$25 a month";};
+        }*@
+
     </div>
-    <div class="col-md-12">
-        @Html.Display("Once the 18 months has been achieved, the client owns the instrument. If they return it at any time before 3 months there will be a $200 re-stocking fee. If they return it after 3 months they forfeit any equity in the instrument.")
-    </div>
+    
 </div>
+@Html.DisplayText("Once the 18 months has been achieved, the client owns the instrument. If they return it at any time before 3 months there will be a $200 re-stocking fee. If they return it after 3 months they forfeit any equity in the instrument.")
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
